@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "PDF Printer",
+    "version": "1.0",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "pdfprinter@gmail.com",
+            "strict_min_version": "42.0"
+        }
+    },
+    "description": "Print HTML to PDF",
+    "icons": {
+        "48": "icons/border-48.png"
+    },
+    "background": {
+        "scripts": [
+            "src/background.js"
+        ]
+    },
+    "options_ui": {
+        "page": "options/options.html"
+    },
+    "content_security_policy": "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline'",
+    "permissions": [
+        "*://developer.mozilla.org/*",
+        "webRequest",
+        "<all_urls>",
+        "activeTab",
+        "webNavigation",
+        "storage",
+        "downloads",
+        "commands"
+    ]
+}
